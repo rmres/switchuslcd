@@ -5,8 +5,8 @@ const int echoPin = 11;
 const int switcher = 10;
 const int vibra = 13;
 int swstatus = 0;
-int distancia = 0;
-long duracao = 0;
+int distancia = 0; // Distance
+long duracao = 0; // Duration
 
 LiquidCrystal lcd(2, 3, 7, 6, 5, 4);
 
@@ -32,7 +32,7 @@ void loop() {
         digitalWrite(triggerPin, LOW);
 
         duracao = pulseIn(echoPin, HIGH);
-        distancia = duracao * 0.01723;
+        distancia = duracao * 0.01723; // centimeter
 
         if (distancia < 80) {
             digitalWrite(vibra, HIGH);
@@ -48,7 +48,7 @@ void loop() {
         delay(500);
         lcd.clear();
 
-        Serial.print("Distancia em cm: ");
+        Serial.print("Distancia em cm: "); // Distance in cm:
         Serial.println(distancia);
     }
 
