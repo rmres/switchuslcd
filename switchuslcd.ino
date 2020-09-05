@@ -56,5 +56,6 @@ void loop() {
         digitalWrite(triggerPin, LOW);
         digitalWrite(vibra, LOW);
         digitalWrite(echoPin, LOW);
+        // Turns vibra and ultrasonic sensor off. 
     }
 }
